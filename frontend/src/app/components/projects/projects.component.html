@@ -1,0 +1,30 @@
+<section id="projects" class="projects section">
+  <div class="container">
+    <h2 class="section-title" [@fadeIn]>My <span class="highlight-text">Projects</span></h2>
+    
+    <div class="projects-description" [@fadeIn]>
+      <p>Here are some of the projects I've worked on. Each project represents different challenges I've overcome and skills I've developed throughout my career.</p>
+    </div>
+    
+    <div class="projects-grid" [@staggerProjects]>
+      <div class="project-card" *ngFor="let project of projects">
+        <div class="project-img">
+          <img [src]="project.imageUrl" alt="{{ project.title }}">
+          <div class="project-overlay">
+            <div class="project-links">
+              <!-- <a [href]="project.demoUrl" class="project-link" target="_blank">Live Demo</a> -->
+              <a [href]="project.codeUrl" class="project-link" target="_blank">View Code</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          <div class="project-tech">
+            <span class="tech-tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,119 @@
+<!-- src/app/components/contact/contact.component.html -->
+<section id="contact" class="contact section">
+  <div class="container">
+    <h2 class="section-title">Get in <span class="highlight-text">Touch</span></h2>
+    
+    <div class="contact-container">
+      <div class="contact-info" @staggerItems>
+        <div class="contact-intro">
+          <h3>Let's Talk</h3>
+          <p>Feel free to reach out for collaboration, job opportunities, or just to say hello!</p>
+        </div>
+        
+        <div class="contact-info-items">
+          <div class="contact-info-item" *ngFor="let item of contactInfo">
+            <div class="info-icon">
+              <i class="icon-{{ item.icon }}"></i>
+            </div>
+            <div class="info-content">
+              <h4>{{ item.title }}</h4>
+              <p *ngIf="!item.link">{{ item.value }}</p>
+              <a *ngIf="item.link" [href]="item.link">{{ item.value }}</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <h4>Connect With Me</h4>
+          <div class="social-icons">
+            <a *ngFor="let social of socialLinks" [href]="social.url" target="_blank" rel="noopener noreferrer" class="social-icon" [attr.aria-label]="social.name">
+              <i class="icon-{{ social.icon }}"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-container" @fadeIn>
+        <div class="form-wrapper">
+          <h3>Send Me a Message</h3>
+          
+          <div *ngIf="submitSuccess" class="form-success-message">
+            <div class="success-icon">✓</div>
+            <p>Your message has been sent successfully! I'll get back to you soon.</p>
+          </div>
+          
+          <div *ngIf="submitError" class="form-error-message">
+            <div class="error-icon">!</div>
+            <p>There was an error sending your message. Please try again.</p>
+          </div>
+          
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!submitSuccess">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+                placeholder="Your name"
+              >
+              <div *ngIf="submitted && f['name'].errors" class="error-message">
+                <span *ngIf="f['name'].errors['required']">Name is required</span>
+                <span *ngIf="f['name'].errors['minlength']">Name must be at least 2 characters</span>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+                placeholder="Your email address"
+              >
+              <div *ngIf="submitted && f['email'].errors" class="error-message">
+                <span *ngIf="f['email'].errors['required']">Email is required</span>
+                <span *ngIf="f['email'].errors['email']">Please enter a valid email address</span>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                formControlName="subject"
+                [ngClass]="{ 'is-invalid': submitted && f['subject'].errors }"
+                placeholder="Subject of your message"
+              >
+              <div *ngIf="submitted && f['subject'].errors" class="error-message">
+                <span *ngIf="f['subject'].errors['required']">Subject is required</span>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                formControlName="message"
+                rows="5"
+                [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"
+                placeholder="Your message"
+              ></textarea>
+              <div *ngIf="submitted && f['message'].errors" class="error-message">
+                <span *ngIf="f['message'].errors['required']">Message is required</span>
+                <span *ngIf="f['message'].errors['minlength']">Message must be at least 10 characters</span>
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+<!-- src/app/components/footer/footer.component.html -->
+<footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h2 class="logo">YourName</h2>
+          <p class="tagline">Frontend Developer</p>
+          <p class="footer-description">
+            Creating beautiful, responsive, and user-friendly web applications with modern technologies.
+          </p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul class="footer-nav">
+            <li *ngFor="let link of navigationLinks">
+              <a [routerLink]="[]" [fragment]="link.route">{{ link.name }}</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p><i class="icon-email"></i> <a href="mailto:your.email@example.com"></a></p>
+          <p><i class="icon-phone"></i> <a href="tel:+11234567890">+254113397560</a></p>
+          <p><i class="icon-location"></i> Kamulu, Nairobi</p>
+          
+          <div class="footer-social">
+            <a *ngFor="let social of socialLinks" 
+               [href]="social.url" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="social-icon" 
+               [attr.aria-label]="social.name">
+              <i class="icon-{{ social.icon }}"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">&copy; {{ currentYear }} Charity Nyawira. All Rights Reserved.</p>
+        <button class="scroll-to-top" (click)="scrollToTop()" aria-label="Scroll to top">
+          <i class="icon-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>

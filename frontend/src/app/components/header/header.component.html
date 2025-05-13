@@ -1,0 +1,22 @@
+<header class="header" [@fadeInDown]>
+  <div class="container">
+    <div class="logo">
+      <a href="#">Your<span class="highlight-text">Name</span></a>
+    </div>
+    <nav class="nav" [class.active]="isMenuOpen">
+      <ul>
+        <li><a href="#home" (click)="isMenuOpen = false">Home</a></li>
+        <li><a href="#about" (click)="isMenuOpen = false">About</a></li>
+        <li><a href="#skills" (click)="isMenuOpen = false">Skills</a></li>
+        <li><a href="#projects" (click)="isMenuOpen = false">Projects</a></li>
+        <li><a href="#experience" (click)="isMenuOpen = false">Experience</a></li>
+        <li><a href="#contact" (click)="isMenuOpen = false">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" (click)="toggleMenu()">
+      <span [class.active]="isMenuOpen"></span>
+      <span [class.active]="isMenuOpen"></span>
+      <span [class.active]="isMenuOpen"></span>
+    </div>
+  </div>
+</header>

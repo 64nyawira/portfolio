@@ -1,0 +1,56 @@
+<section id="skills" class="skills section">
+  <div class="container">
+    <h2 class="section-title">My <span class="highlight-text">Skills</span></h2>
+    
+    <div class="skills-description">
+      <p>With expertise in both front-end and back-end technologies, I offer a comprehensive skill set for building modern web applications. Here's a breakdown of my technical competencies:</p>
+    </div>
+    
+    <div class="skills-container" @staggerFadeIn>
+      <div class="skills-category">
+        <h3 class="category-title">Frontend Development</h3>
+        <div class="skills-list">
+          <div class="skill-item" *ngFor="let skill of frontendSkills">
+            <div class="skill-info">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-percentage">{{ skill.proficiency }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" [@progressAnimation] [style.width.%]="skill.proficiency"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skills-category">
+        <h3 class="category-title">Backend Development</h3>
+        <div class="skills-list">
+          <div class="skill-item" *ngFor="let skill of backendSkills">
+            <div class="skill-info">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-percentage">{{ skill.proficiency }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" [@progressAnimation] [style.width.%]="skill.proficiency"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skills-category">
+        <h3 class="category-title">Other Skills</h3>
+        <div class="skills-list">
+          <div class="skill-item" *ngFor="let skill of otherSkills">
+            <div class="skill-info">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-percentage">{{ skill.proficiency }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" [@progressAnimation] [style.width.%]="skill.proficiency"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

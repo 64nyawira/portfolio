@@ -1,0 +1,45 @@
+<section id="experience" class="experience section">
+  <div class="container">
+    <h2 class="section-title" [@fadeIn]>My <span class="highlight-text">Experience</span></h2>
+    
+    <div class="timeline-container" [@staggerExperience]>
+      <div class="timeline-header">
+        <h3>Work Experience</h3>
+      </div>
+      
+      <div class="timeline">
+        <div class="experience-item" *ngFor="let exp of experiences">
+          <div class="timeline-icon">
+            <div class="dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="time-period">{{ exp.period }}</div>
+            <h4 class="position">{{ exp.position }}</h4>
+            <h5 class="company">{{ exp.company }}</h5>
+            <ul class="responsibilities">
+              <li *ngFor="let item of exp.description">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="timeline-header">
+        <h3>Education</h3>
+      </div>
+      
+      <div class="timeline">
+        <div class="experience-item" *ngFor="let edu of education">
+          <div class="timeline-icon">
+            <div class="dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="time-period">{{ edu.period }}</div>
+            <h4 class="position">{{ edu.degree }}</h4>
+            <h5 class="company">{{ edu.institution }}</h5>
+            <p class="education-description">{{ edu.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
