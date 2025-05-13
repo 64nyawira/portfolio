@@ -33,18 +33,18 @@ export class ProjectsComponent {
     {
       title: 'E-Restaurant Platform',
       description: 'A fully functional e-commerce platform with product listings, shopping cart, checkout process, and admin dashboard.',
-      imageUrl: 'assets/images/project-placeholder-1.jpg',
-      technologies: ['Angular', 'Node.js', 'Express', 'MongoDB'],
+      imageUrl: 'assets/dinedash-placeholder-1.jpg',
+      technologies: ['Angular', 'Node.js', 'Express', 'MSSQL'],
       demoUrl: '#',
-      codeUrl: '#'
+      codeUrl: 'https://github.com/64nyawira/Dinedash.git'
     },
     {
-      title: 'Task Management App',
+      title: 'Task Management App |Plana',
       description: 'A collaborative task management application with features like task assignment, progress tracking, and deadline notifications.',
       imageUrl: 'assets/images/project-placeholder-2.jpg',
-      technologies: ['React', 'Firebase', 'Material UI'],
+      technologies: ['Angular', 'Node.js', 'Express', 'MSSQL'],
       demoUrl: '#',
-      codeUrl: '#'
+      codeUrl: 'https://github.com/64nyawira/plana-application.git'
     },
     {
       title: 'Weather Dashboard',
@@ -54,29 +54,29 @@ export class ProjectsComponent {
       demoUrl: '#',
       codeUrl: '#'
     },
-    {
-      title: 'Recipe Finder',
-      description: 'A recipe application that allows users to search for recipes by ingredients, save favorites, and create shopping lists.',
-      imageUrl: 'assets/images/project-placeholder-4.jpg',
-      technologies: ['Angular', 'RxJS', 'Spoonacular API'],
-      demoUrl: '#',
-      codeUrl: '#'
-    },
-    {
-      title: 'Fitness Tracker',
-      description: 'A fitness tracking application that helps users record workouts, track progress, and achieve fitness goals.',
-      imageUrl: 'assets/images/project-placeholder-5.jpg',
-      technologies: ['TypeScript', 'Node.js', 'MySQL'],
-      demoUrl: '#',
-      codeUrl: '#'
-    },
+    // {
+    //   title: 'Recipe Finder',
+    //   description: 'A recipe application that allows users to search for recipes by ingredients, save favorites, and create shopping lists.',
+    //   imageUrl: 'assets/images/project-placeholder-4.jpg',
+    //   technologies: ['Angular', 'RxJS', 'Spoonacular API'],
+    //   demoUrl: '#',
+    //   codeUrl: '#'
+    // },
+    // {
+    //   title: 'Fitness Tracker',
+    //   description: 'A fitness tracking application that helps users record workouts, track progress, and achieve fitness goals.',
+    //   imageUrl: 'assets/images/project-placeholder-5.jpg',
+    //   technologies: ['TypeScript', 'Node.js', 'MySQL'],
+    //   demoUrl: '#',
+    //   codeUrl: '#'
+    // },
     {
       title: 'Portfolio Website',
       description: 'A modern, responsive portfolio website built with Angular to showcase my projects and skills.',
-      imageUrl: 'assets/images/project-placeholder-6.jpg',
+      imageUrl: 'assets/portfolio-placeholder-6.jpg',
       technologies: ['Angular', 'TypeScript', 'CSS Animations'],
       demoUrl: '#',
-      codeUrl: '#'
+      codeUrl: 'https://github.com/64nyawira/portfolio.git'
     }
   ];
 }
